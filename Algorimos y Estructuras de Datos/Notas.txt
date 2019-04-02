@@ -1,0 +1,18 @@
+En la plataforma aulas, 
+
+//Pre: desde>=0, desde<=hasta, hasta<v.length
+//Pos: el retorno debe ser true sii los elementos siguen un patrón de mayor-menos-mayor-menor... de forma intercalada
+public static boolean zigzag(int[]v, int desde, int hasta){
+
+}
+
+Ejemplo:
+
+zigzag([1,4,2,5,3,7,1,8,2,9,3],0,10) -> true
+zigzag([1,4,1],0,2) -> false
+zigzag([1,4,4],0,2) -> false
+zigzag([1,4,7],0,2) -> false
+
+La primer llamada a la función daría false ya que el patrón es [menor, mayor, menor...] y se pide lo opuesto
+La solucion 1 que doy al problema es estrictamente este patron.
+La solucion 2 no importa el patron, siempre que se respete [menor, mayor, menor...] o [mayor, menor, mayor...]

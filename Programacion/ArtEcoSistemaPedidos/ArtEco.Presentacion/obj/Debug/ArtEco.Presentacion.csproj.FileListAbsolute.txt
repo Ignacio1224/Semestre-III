@@ -1,0 +1,16 @@
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Presentacion.exe.config
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Presentacion.exe
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Presentacion.pdb
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Dominio.dll
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Dominio.pdb
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\obj\Debug\ArtEco.Presentacion.csprojResolveAssemblyReference.cache
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\obj\Debug\ArtEco.Presentacion.exe
+D:\Adriana\2019.M3A\ArtEcoSistemaPedidos\ArtEco.Presentacion\obj\Debug\ArtEco.Presentacion.pdb
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Presentacion.exe.config
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\obj\Debug\ArtEco.Presentacion.exe
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\obj\Debug\ArtEco.Presentacion.pdb
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\obj\Debug\ArtEco.Presentacion.csprojResolveAssemblyReference.cache
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Presentacion.exe
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Presentacion.pdb
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Dominio.dll
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Presentacion\bin\Debug\ArtEco.Dominio.pdb

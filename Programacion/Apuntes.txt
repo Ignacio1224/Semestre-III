@@ -1,0 +1,43 @@
+Como obtener el ID Autogenerado Desde la BD (Identity)
+
+	SQL guarda el valor del identity del nuevo registro
+	@@Identity // Existe una función que retorna --> @@ scope_identity
+	
+	// Class Producto que tiene un ID autonumeric
+	
+	void Insertar() {
+		// String stringConnection = ConfigurationManager.ConnectionStrings["miBase"].ConnectionString;
+		
+		String stringCommand = @"INSERT INTO PRODUCTO (Nombre, Precio) VALUES (@nombre, @precio); SELECT CAST(SCOPE_IDENTITY() AS INT);";
+		
+		SqlConnection cn = UtilitiesDB.CreateConnection();
+		SqlCommand cmd = new SqlCommand(stringCommand, cn);
+		cmd.Parameters.Add(new SqlParameter("@nombre", this.nombre));
+		cmd.Parameters.Add(new SqlParameter("@precio", this.precio));
+		
+		try {
+			UtilitiesDB.OpenConnection(cn);
+			this.Id = (int) cmd.ExecuteScalar(); // ExecuteScalar retorna un solo valor
+		} catch (SqlExeption ex) {
+			Debug.Writeline(ex.Message + "Error al insertar");
+		} cath (Exeption ex) {
+			Debug.Writeline(ex.Message + "Otro Error");
+		} finally {
+			UtilitiesDB.CloseConnection(cn);
+			cn.Dispose();
+		}
+	}
+	
+Objetos Ado Para Transacciones
+
+	SqlTransaction (El que vamos a ver)
+	
+	TransactionScope
+	
+	Propiedades ACID
+		Una transacción debe asegurar que una operación sea Atómica (más de una operación como si fuese una sola)
+		Debe asegurar que el estado de la BD sea Consistente (ej: restricciones de FK se cumplen)
+		Debe asegurar que tenga cierto nivel de aislamiento respecto a otras transacciones simulttáneas (Isolation)
+		Durable, que queda registrada en la BD para poder incluir las operaciones en la BD (ej: con el archivo LDF de LOG)
+		
+	

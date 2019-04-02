@@ -1,0 +1,9 @@
+C:\Users\alumnoFI\Downloads\ArtEcoSistemaPedidos\ArtEco.Testing\bin\Debug\ArtEco.Testing.exe.config
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\bin\Debug\ArtEco.Testing.exe.config
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\bin\Debug\ArtEco.Testing.exe
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\bin\Debug\ArtEco.Testing.pdb
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\bin\Debug\ArtEco.Dominio.dll
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\bin\Debug\ArtEco.Dominio.pdb
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\obj\Debug\ArtEco.Testing.csprojResolveAssemblyReference.cache
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\obj\Debug\ArtEco.Testing.exe
+C:\Users\Ignacio\Desktop\ORT\Semestre III\Programacion\ArtEcoSistemaPedidos\ArtEco.Testing\obj\Debug\ArtEco.Testing.pdb

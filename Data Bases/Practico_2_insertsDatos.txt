@@ -1,0 +1,79 @@
+-----------------------------------------------------------------------------
+- ESTE ARCHIVO ES UNA AYUDA AL ALUMNO PARA NO TENER QUE DIGITAR TODA LA INFORMACION
+- TIENE ERRORES SINTACTICOS PUESTOS PARA QUE EL ALUMNO IDENTITIQUE EL PROBLEMA Y LO RESUELVA
+-----------------------------------------------------------------------------
+
+
+DOCENTES (codDoc, nomDoc, telDoc, mailDoc, sueldoDoc)
+5,	'CarmenDominguez',  98641257,	'cdominguez@adinet.com.uy', 23000
+6,	'DanielaEstev',	    94812578,	'destev@adinet.com.uy',	   	25000
+7,	'EduardoFernandez', 96635587,	'efernandez@gmail.com',	   	24500
+8,	'FedericaGonzalez', 93123478,	'fgonzalez@hotmail.com.uy', 27800
+9,	GabrielaHernandez,  96987785,	'ghe	rnandez@adinet.com.uy', 29000
+
+
+
+GRUPOS(codGrp, codDoc, codCur, turnoCur, FchiniCur, FchfinCur) 
+
+codGrp, codDoc, codCur, turnoCur, 	FchiniCur, 	FchfinCur
+('BDT12'	 5	2	'VESPERTINO' 	'2014-03-15' 	'2014-08-15'),
+('BDT11'	 4	2	'MATUTINO' 		'2015-03-10' 	'2015-07-30'),
+('PRG22'	 8	5	'VESPERTINO'	'2014-08-10' 	'2014-12-20'),
+('MAT1'	 	1	1	'MATUTINO'		'2015-03-01'	'2015-11-15'),
+('PRG11'	 7	4	'MATUTINO' 		'2015-03-10' 	'2015-07-30'),
+('PRG21'	 8	5	'VESPERTINO' 	'2015-07-25' 	'2015-11-30'),
+('PRG12'	 7	4	'MATUTINO'		'2016-03-28' 	'2016-07-28'),
+('ING5'	 	2	6	'MATUTINO'		'2016-03-15' 	'2016-11-10'),
+('BDT13'	 4	2	'MATUTINO'		'2016-03-05' 	'2016-08-05'),
+('BDT21'	 4	3	'VESPERTINO' 	'2016-07-20' 	'2016-12-01'),
+('GBDT16' 	5	10	'VESPERTINO' 	'13/03/2016'	'13/05/2016'),
+('ING6'		2	6	'MATUTINO'		'2017-03-10' 	'2017-11-27'),
+('LOG1'	 	1	8	'MATUTINO'		'2017-04-01' 	'2017-08-01'),
+('LOG2'	 	3	8	'VESPERTINO' 	'2017-04-15' 	'2017-08-15'),
+('BDT14'	 5	2	'MATUTINO'		'2017-04-10' 	'2017-09-10'),
+('BDT22'	 6	3	'VESPERTINO' 	'2017-08-01' 	'2017-12-11'),
+('PRG13'	 7	4	'MATUTINO'		'2017-03-10' 	'2017-08-10'),
+('PRG23'	 8	5	'VESPERTINO' 	'2017-08-02'	'2017-12-02'),
+('INT1'	 	2	7	'VESPERTINO'	'2017-03-01' 	'2017-06-30');
+
+
+
+GRUPOS_EST(codGrp, codEst)
+('ING5',	2),
+('ING5',	4),
+('ING5',	5),
+('BDT13',	1),
+('BDT13',	2),
+('BDT13',	5),
+('BDT13',	6),
+('PRG12',	1),
+('PRG12',	6),
+('GBDT16', 	3),
+('ING6',	3),
+('LOG1',	5),
+('BDT14',	3),
+('PRG13',	2),	
+('PRG13',	3),
+('PRG23',	1),
+('PRG23',	2),
+('PRG23',	3),
+('PRG23',	6),
+('BDT22',	1),
+('BDT22',	3),
+('BDT22',	5)
+
+
+EXAMENES(
+codExa, codCur, codEst, codGrp, FchExa, 	NotaExa, 	EstExa )
+1,	6,	2,	'ING5',	'2016-11-11',	80,		'Aprobado'),
+2,	6,	4,	'ING5', '2016-11-11',	83,		'Aprobado'),
+3,	6,	5,	'ING5',	'2016-11-11',	0,		'NSP'),
+4,	2,	1,	'BDT13','2016-08-10',	53,		'Perdido'),
+5,	2,	2,	'BDT13','2016-08-10',	94,		'Aprobado'),
+6,	2,	5,	'BDT13','2016-08-10',	79,		'Aprobado'),
+7,	2,	6,	'BDT13','2016-08-10',	73,		'Aprobado'),
+8,	4,	1,	'PRG12','2016-07-30',	87,		'Aprobado'),
+9,	4,	6,	'PRG12','2016-07-30',	78,		'Aprobado')
+
+
+
