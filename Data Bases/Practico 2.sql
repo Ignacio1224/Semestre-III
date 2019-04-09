@@ -1,6 +1,7 @@
 -- Autor: Ignacio Cabrera - 236296
 
 USE Ensenanza;
+GO
 
 -- Ejercicio 1
 INSERT INTO DOCENTE (nomDoc, telDoc, mailDoc, sueldoDoc) VALUES ('Jose Gomez','29367842','jgomez@adinet.com.uy','15360');
@@ -21,8 +22,8 @@ INSERT INTO ESTUDIANTE (ciEst, nomEst, mailEst, telEst) VALUES ('3.558.138-5','A
 
 -- Ejercicio 4
 -- Debido al error de la constraint visto en clase, la doy de baja y creo una nueva chequeando sólo que sean letras en mayúsculas.
-ALTER TABLE CURSO NOCHECK CONSTRAINT upperCase_tipCur_CURSO;
-ALTER TABLE CURSO ADD CONSTRAINT onlyUpperCase_tipCur_CURSO CHECK (tipCur LIKE '[A-Z][A-Z][A-Z]');
+-- ALTER TABLE CURSO NOCHECK CONSTRAINT upperCase_tipCur_CURSO;
+-- ALTER TABLE CURSO ADD CONSTRAINT onlyUpperCase_tipCur_CURSO CHECK (tipCur LIKE '[A-Z][A-Z][A-Z]');
 
 INSERT INTO CURSO (codCur, nomCur, frecCur, tipCur, cantHrs)
 VALUES
@@ -57,7 +58,7 @@ UPDATE DOCENTE SET sueldoDoc = sueldoDoc + sueldoDoc * 0.20 WHERE sueldoDoc < 20
 -- Ejercicio 7
 (SELECT MAX(codEst) FROM ESTUDIANTE)
 SELECT TOP 1 * FROM ESTUDIANTE ORDER BY codEst DESC;
-DELETE FROM ESTUDIANTE WHERE codEst = (SELECT MAX(codEst) FROM ESTUDIANTE); DBCC CHECKIDENT (ESTUDIANTE, NORESEED); -- Como codCur es AUTO-INCREMENTAL puedo eliminar el máximo siendo el último regustro
+DELETE FROM ESTUDIANTE WHERE codEst = (SELECT MAX(codEst) FROM ESTUDIANTE); DBCC CHECKIDENT (ESTUDIANTE, NORESEED); -- Como codCur es IDENTITY puedo eliminar el máximo siendo el último regustro
 
 -- Ejercicio 8
 	-- A
@@ -74,28 +75,28 @@ INSERT INTO DOCENTE (nomDoc, telDoc, mailDoc, sueldoDoc) VALUES
 	('FedericaGonzalez', '93123478', 'fgonzalez@hotmail.com.uy', 27800),
 	('GabrielaHernandez', '96987785', 'ghe	rnandez@adinet.com.uy', 29000)
 ;
-
+SELECT * FROM CURSO
+SELECT * FROM DOCENTE
 SET DATEFORMAT 'ymd';
-alter table grupo add constraint R_1 check(codGrp like '[A-Z][A-Z][A-Z][0-9][0-9][0-9]'); -- Editado por la docente
 INSERT INTO GRUPO(codGrp, codDoc, codCur, turnoCur, finiCur, ffinCur) VALUES
-('BDT102', 10, 2, 'VESPERTINO', '2014-03-15', '2014-08-15'),
-('BDT110', 4, 2,	'MATUTINO', '2015-03-10', '2015-07-30'),
-('PRG220', 12, 5, 'VESPERTINO', '2014-08-10', '2014-12-20'),
+('BDT102', 1, 2, 'VESPERTINO', '2014-03-15', '2014-08-15'),
+('BDT110', 4, 2, 'MATUTINO', '2015-03-10', '2015-07-30'),
+('PRG220', 9, 5, 'VESPERTINO', '2014-08-10', '2014-12-20'),
 ('MAT100', 1, 1, 'MATUTINO',	'2015-03-01', '2015-11-15'),
 ('PRG118', 9, 4, 'MATUTINO', '2015-03-10', '2015-07-30'),
-('PRG210', 12, 5, 'VESPERTINO', '2015-07-25', '2015-11-30'),
-('PRG126', 11, 4, 'MATUTINO',	'2016-03-28', '2016-07-28'),
+('PRG210', 3, 5, 'VESPERTINO', '2015-07-25', '2015-11-30'),
+('PRG126', 4, 4, 'MATUTINO',	'2016-03-28', '2016-07-28'),
 ('ING500', 2, 6, 'MATUTINO',	'2016-03-15', '2016-11-10'),
 ('BDT130', 4, 2, 'MATUTINO',	'2016-03-05', '2016-08-05'),
 ('BDT210', 4, 3, 'VESPERTINO', '2016-07-20', '2016-12-01'),
-('GBD106', 9, 10, 'VESPERTINO', '2016-03-13', '2016-05-13'),
+('GBD106', 9, 8, 'VESPERTINO', '2016-03-13', '2016-05-13'),
 ('ING060', 2, 6, 'MATUTINO',	'2017-03-10', '2017-11-27'),
-('LOG158', 1, 9, 'MATUTINO',	'2017-04-01', '2017-08-01'),
+('LOG158', 1, 8, 'MATUTINO',	'2017-04-01', '2017-08-01'),
 ('LOG257', 3, 8, 'VESPERTINO', '2017-04-15', '2017-08-15'),
 ('BDT147', 9, 2, 'MATUTINO',	'2017-04-10', '2017-09-10'),
-('BDT228', 13, 3, 'VESPERTINO', '2017-08-01', '2017-12-11'),
-('PRG135', 11, 4, 'MATUTINO',	'2017-03-10', '2017-08-10'),
-('PRG236', 12, 5,	'VESPERTINO', '2017-08-02', '2017-12-02'),
+('BDT228', 5, 3, 'VESPERTINO', '2017-08-01', '2017-12-11'),
+('PRG135', 6, 4, 'MATUTINO',	'2017-03-10', '2017-08-10'),
+('PRG236', 7, 5,	'VESPERTINO', '2017-08-02', '2017-12-02'),
 ('INT122', 2, 7, 'VESPERTINO', '2017-03-01', '2017-06-30')
 ;
 
@@ -147,7 +148,9 @@ SELECT AVG(CAST(notaExa AS DECIMAL)) AS' Promedio' FROM EXAMEN WHERE YEAR(FchExa
 SELECT COUNT(codEst) AS 'Cantidad de estudiantes aprobados con nota >= a 80' FROM EXAMEN WHERE notaExa >= 80;
 
 	-- D
-SELECT codEst FROM EXAMEN WHERE codCur = 6 AND estExa = 'Aprobado'; -- En vez de utilizar el curso 'BD2' se utiliza el curso 'Ingles'
+SELECT codEst FROM EXAMEN WHERE
+	codCur = (SELECT codCur FROM CURSO WHERE nomCur = 'Ingles') 
+	AND estExa = 'Aprobado'; -- En vez de utilizar el curso 'BD2' se utiliza el curso 'Ingles'
 
 	-- E
 SELECT * FROM ESTUDIANTE WHERE codEst NOT IN (SELECT codEst FROM EXAMEN);
