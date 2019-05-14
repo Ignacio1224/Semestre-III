@@ -3,7 +3,8 @@
 -- Practico I
 -- Ejercicio 1
 
-
+DROP DATABASE Ensenanza;
+GO
 CREATE DATABASE Ensenanza;
 GO
 USE Ensenanza;
@@ -100,7 +101,7 @@ CREATE TABLE Grupo_Est(
 	CONSTRAINT pk_Grupo_Est PRIMARY KEY (codGrp, codEst),
     CONSTRAINT fk_codGrp_Grupo_Est FOREIGN KEY (codGrp) REFERENCES GRUPO (codGrp),
     CONSTRAINT fk_codEst_Grupo_Est FOREIGN KEY (codEst) REFERENCES ESTUDIANTE (codEst)
-	/* RNE: Debe de existir una inscripción del estudiante en el curso. */
+	/* RNE: Debe de existir una inscripciï¿½n del estudiante en el curso. */
 );
 
 -- Ejercicio 2

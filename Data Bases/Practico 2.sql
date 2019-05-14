@@ -18,10 +18,10 @@ INSERT INTO ESTUDIANTE (ciEst, nomEst, mailEst, telEst) VALUES ('4.912.187-9','R
 INSERT INTO ESTUDIANTE (ciEst, nomEst, mailEst, telEst) VALUES ('4.927.439-7','Nacho Gomez','nacho@gmail.uy','76356896'); -- Agregado para realizar pruebas
 INSERT INTO ESTUDIANTE (ciEst, nomEst, mailEst, telEst) VALUES ('5.321.489-9','Rigoberta Melchu','rmelchu@gmail.uy','489651351'); -- Agregado para realizar pruebas
 -- Ejercicio 3
-INSERT INTO ESTUDIANTE (ciEst, nomEst, mailEst, telEst) VALUES ('3.558.138-5','Andres Gonzalez','agonz@gmail.uy','99688988'); -- Ya existe una ciEst con este valor, se viola la restrición de PK
+INSERT INTO ESTUDIANTE (ciEst, nomEst, mailEst, telEst) VALUES ('3.558.138-5','Andres Gonzalez','agonz@gmail.uy','99688988'); -- Ya existe una ciEst con este valor, se viola la restriciï¿½n de PK
 
 -- Ejercicio 4
--- Debido al error de la constraint visto en clase, la doy de baja y creo una nueva chequeando sólo que sean letras en mayúsculas.
+-- Debido al error de la constraint visto en clase, la doy de baja y creo una nueva chequeando sï¿½lo que sean letras en mayï¿½sculas.
 -- ALTER TABLE CURSO NOCHECK CONSTRAINT upperCase_tipCur_CURSO;
 -- ALTER TABLE CURSO ADD CONSTRAINT onlyUpperCase_tipCur_CURSO CHECK (tipCur LIKE '[A-Z][A-Z][A-Z]');
 
@@ -58,7 +58,7 @@ UPDATE DOCENTE SET sueldoDoc = sueldoDoc + sueldoDoc * 0.20 WHERE sueldoDoc < 20
 -- Ejercicio 7
 (SELECT MAX(codEst) FROM ESTUDIANTE)
 SELECT TOP 1 * FROM ESTUDIANTE ORDER BY codEst DESC;
-DELETE FROM ESTUDIANTE WHERE codEst = (SELECT MAX(codEst) FROM ESTUDIANTE); DBCC CHECKIDENT (ESTUDIANTE, NORESEED); -- Como codCur es IDENTITY puedo eliminar el máximo siendo el último regustro
+DELETE FROM ESTUDIANTE WHERE codEst = (SELECT MAX(codEst) FROM ESTUDIANTE); DBCC CHECKIDENT (ESTUDIANTE, NORESEED); -- Como codCur es IDENTITY puedo eliminar el mï¿½ximo siendo el ï¿½ltimo regustro
 
 -- Ejercicio 8
 	-- A
@@ -75,8 +75,7 @@ INSERT INTO DOCENTE (nomDoc, telDoc, mailDoc, sueldoDoc) VALUES
 	('FedericaGonzalez', '93123478', 'fgonzalez@hotmail.com.uy', 27800),
 	('GabrielaHernandez', '96987785', 'ghe	rnandez@adinet.com.uy', 29000)
 ;
-SELECT * FROM CURSO
-SELECT * FROM DOCENTE
+
 SET DATEFORMAT 'ymd';
 INSERT INTO GRUPO(codGrp, codDoc, codCur, turnoCur, finiCur, ffinCur) VALUES
 ('BDT102', 1, 2, 'VESPERTINO', '2014-03-15', '2014-08-15'),
