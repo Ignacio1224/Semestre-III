@@ -80,3 +80,30 @@ AS
     ORDER BY COUNT (GE.codEst) DESC
 GO
 
+
+--------------------------------------------
+-- Ejercicio 7
+CREATE PROCEDURE SP_MIN_CANT_EST
+    @cant_cursos INT OUTPUT,
+    @cant_est INT OUTPUT
+AS
+    BEGIN
+        SELECT @cant_est = MIN(T.cant_est)
+        FROM (
+            SELECT COUNT (GE.codEst) AS 'cant_est'
+            FROM GRUPO AS G INNER JOIN Grupo_Est AS GE ON G.codGrp = GE.codGrp
+            WHERE 
+                GETDATE() BETWEEN G.finiCur AND G.ffinCur
+            GROUP BY G.codCur
+            ORDER BY COUNT (GE.codEst) DESC
+        ) AS T
+
+        SELECT @cant_cursos = COUNT (G.codCur)
+        FROM GRUPO AS G INNER JOIN Grupo_Est AS GE ON G.codGrp = GE.codGrp
+        WHERE 
+            GETDATE() BETWEEN G.finiCur AND G.ffinCur
+        GROUP BY G.codCur
+        HAVING
+            COUNT (GE.codEst) = @cant_est
+    END
+GO

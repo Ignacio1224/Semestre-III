@@ -1,0 +1,3 @@
+Funciones Recursivas
+	El algoritmo tiene que tender al caso base.
+	El caso base es la condicion de salida.

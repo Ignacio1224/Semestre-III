@@ -81,4 +81,58 @@ SELECT * FROM EXAMEN; -- Verificación del resultado de la consulta.
 
 	-- El resultado esperado es que se actualizen los valores de la cantidad de horas de los cursos cuya frecuencia es 'S'
 	-- a el promedio de la cantidad de horas de los cursos de frecuencia 'S'.
+	
 
+-- Ejercicio 13: Seleccionar los cursos que son previos de otros cursos y además el mismo tiene algún curso como previo.
+SELECT DISTINCT codCurPrevio FROM PREVIATURA WHERE codCurPrevio IN (SELECT DISTINCT codCur FROM PREVIATURA);
+
+
+-- Ejercicio 14: Mostrar la cantidad de estudiantes que se han inscripto a algún curso.
+SELECT COUNT(codEst) AS 'Cantidad de Estudiantes' FROM INSCRIPCION;
+
+
+-- Ejercicio 15:
+
+
+
+-- Ejercicio 16: Devolver los códigos de estudiantes de los estudiantes que se han inscripto en más de 2 cursos. Ordenados en forma ascendente
+SELECT I.codEst
+FROM INSCRIPCION I
+	GROUP BY I.codEst
+	HAVING COUNT (DISTINCT I.codCur) > 2
+ORDER BY I.codEst ASC;
+
+
+-- Ejercicio 17: Devolver los códigos de estudiantes de los estudiantes que se han inscripto en algún curso Anual y a ninguno Semestral.
+-- Opcion 1
+SELECT E.codEst FROM ESTUDIANTE E 
+WHERE 
+EXISTS (SELECT * FROM INSCRIPCION I JOIN CURSO C ON I.codCur = C.codCur AND frecCur = 'A' AND I.codEst = E.codEst) 
+AND NOT EXISTS (SELECT * FROM INSCRIPCION I JOIN CURSO C ON I.codCur = C.codCur AND frecCur = 'S' AND I.codEst = E.codEst);
+
+-- Opcion 2
+SELECT I.codEst FROM INSCRIPCION I 
+WHERE EXISTS (SELECT * FROM CURSO C INNER JOIN INSCRIPCION I2 ON C.codCur = I2.codCur WHERE C.frecCur = 'A' AND I.codEst = I2.codEst) 
+AND NOT EXISTS (SELECT * FROM CURSO C INNER JOIN INSCRIPCION I2 ON C.codCur = I2.codCur WHERE C.frecCur = 'S' AND I.codEst = I2.codEst);
+
+
+-- Ejercicio 18
+
+
+-- Ejercicio 19: Mostrar la cedula y nombre de los estudiantes que aprobaron todos los exámenes a los cuales se presentaron en el año actual
+SELECT E.ciEst, E.nomEst
+FROM ESTUDIANTE E
+WHERE E.codEst NOT IN (SELECT Ex.codEst FROM EXAMEN Ex WHERE Ex.notaExa < 70 AND YEAR(Ex.FchExa) <> YEAR(GETDATE()));
+
+-- Ejercicio 20: Mostrar los estudiantes que se hayan inscripto a mas de 5 cursos distintos en el año actual y que a su vez reprobaron por lo menos 1 examen en el año anterior.
+SELECT I.codEst
+FROM INSCRIPCION I
+WHERE YEAR(I.fechaIns) = YEAR(GETDATE()) 
+AND I.codEst IN (
+	SELECT E.codEst 
+	FROM EXAMEN E 
+	WHERE YEAR(FchExa) = YEAR(GETDATE())-1 
+	AND E.notaExa < 70
+	)
+GROUP BY I.codEst
+	HAVING COUNT (DISTINCT I.codCur) > 5

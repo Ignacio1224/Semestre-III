@@ -1,0 +1,7 @@
+/*
+    En el trigger con after se comitea al final o no si se hace rollback
+    En el trigger con instead of se debe hacer la operacion manual
+    Se definen en tablas
+    Controlan RRNEE
+
+*/

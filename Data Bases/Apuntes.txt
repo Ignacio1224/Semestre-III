@@ -1,0 +1,21 @@
+Cuando se agrupa por PK se puede poner un campo descripivo sin problemas, ej:
+	
+	SELECT I.codCur, C.nomCur, I.codEst COUNT (*) AS 'Cantidad de Inscripciones'
+	FROM CURSO C INNER JOIN INSCRIPCION I ON C.codCur = I.codCur
+	WHERE C.frecCur = 'A'
+	GROUP BY (I.codCur, C.nomCur)
+
+
+El HAVING es una condicion de filtro sobre el GROUP BY, ej:
+	SELECT I.codCur, COUNT (*) AS 'Cantidad de Inscripciones'
+	FROM CURSO C INNER JOIN INSCRIPCION I ON C.codCur = I.codCur
+	WHERE C.frecCur = 'A'
+	GROUP BY (I.codCur)
+	HAVING COUNT (*) > 10
+	-- SELECCIONA LOS CURSOS CON MAS DE 10 INSCRIPCIONES Y MUESTRA EL CODIGO DE CURSO CON LA CANTIDAD DE INSCRIPCIONES
+
+Si se discrimina por todos se va por el contrario, ej: Ejercicio 19 del practico 3
+
+
+
+
